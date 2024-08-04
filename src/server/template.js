@@ -8,7 +8,7 @@ const template = (appString) => `
     </head>
     <body>
       <div id="root">${appString}</div>
-      <script src="/bundle.js"></script>
+      <script src="/static/bundle.js"></script>
     </body>
   </html>
 `;
