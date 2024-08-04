@@ -2,15 +2,16 @@ import React from 'react';
 import Home from '../pages/Home';
 import { Route, Routes } from 'react-router-dom';
 import SearchNav from './SearchNav/SearchNav';
+import ItemList from '../pages/Item/ItemList';
 
 const App = (props) => {
 
     return (
         <>
+            <SearchNav />
             <Routes>
-                <Route exact path="/" element={<SearchNav/>}>
-                    <Route index element={<Home />}/>
-                </Route>
+                <Route index path="/" element={<Home />}/>
+                <Route path='/items' element={<ItemList/>} />
             </Routes>
         </>
     );
