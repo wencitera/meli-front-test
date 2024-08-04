@@ -5,7 +5,7 @@
     "build": "npm run build:client & npm run build:server",
     "start:server": "nodemon --exec babel-node src/server/index.js",
     "start:client": "webpack --watch",
-    "start": "npm run start:server & npm run start:client"
+    "start": "npm-run-all --parallel start:*"
   },
   "dependencies": {
     "axios": "^1.7.3",
@@ -23,6 +23,7 @@
     "@babel/preset-react": "^7.24.7",
     "babel-loader": "^9.1.3",
     "nodemon": "^3.1.4",
+    "npm-run-all": "^4.1.5",
     "webpack": "^5.93.0",
     "webpack-cli": "^5.1.4"
   }
