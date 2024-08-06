@@ -1,3 +1,51 @@
-body{
-    background-color: gray;
-}
+@import '../../styles/style.scss'; 
+ 
+ body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .search-container {
+    display: flex;
+    background-color: $primary-color;
+    justify-content: center;
+    align-items: center;
+    height: 60px
+  }
+  
+ form{
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+ }
+
+ .logo {
+    margin-right: 10px;
+  }
+  
+  .search-input {
+    padding: 10px 5px 10px 12px;
+    border: 1px solid $light-color;
+    border-radius: 4px;
+    color: $black-color;
+    font-size: 18px;
+    width: 100%;
+  }
+  
+  .search-input::placeholder {
+    color: $gray-color;
+  }
+  
+  .search-button {
+    background-color: $light-color;
+    padding: 10px 5px 10px 12px;
+    border: 1px solid $light-color;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .search-icon {
+    color: $gray-color;
+    font-size: 18px;
+  }

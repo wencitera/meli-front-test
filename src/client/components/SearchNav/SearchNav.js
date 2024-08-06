@@ -22,24 +22,20 @@ const SearchNav = () => {
   };
 
   return (
-    <header>
-      <form onSubmit={handleSubmit}>
-        <a href="/">
-          <img src={null} alt="MeLi" className="logo" />
-        </a>
+    <div className="search-container">
+      <form className="search-form" onSubmit={handleSubmit}>
+        <img src={null} alt="Logo" className="logo" />
         <input
-          className="SearchBox"
-          type="search"
+          type="text"
           placeholder="Nunca dejes de buscar"
+          className="search-input"
           onChange={handleChange}
-          aria-label="Nunca dejes de buscar"
-        />
-        <button type="submit">
-          <img src={null} alt="Buscar" />
-        </button>
+          />
+            <button className="search-button">
+                  <img src={null} alt="SearchIcon"/>
+            </button>
       </form>
-      
-    </header>
+    </div>
   );
 };
 
