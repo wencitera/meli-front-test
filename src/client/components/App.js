@@ -10,7 +10,7 @@ const App = (props) => {
         <>
             <SearchNav />
             <Routes>
-                <Route index path="/" element={<Home />}/>
+                <Route path="/" element={<Home />}/>
                 <Route path='/items' element={<ItemList/>} />
             </Routes>
         </>
