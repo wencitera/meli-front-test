@@ -1,10 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import './Item.scss'
+import { useNavigate } from 'react-router-dom';
 
 const Item = ({ id, picture, title, amount, free_shipping, location }) => {
+
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate(`/item/${id}`); // Redirige a la URL /item/:id
+    };
+    
   return (
-    <div className="item">
+    <div className="item" onClick={handleClick}>
         <div className="item-data">
         <div className="item-image">
             <img src={picture} alt={title} />
