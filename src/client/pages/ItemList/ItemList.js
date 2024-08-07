@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
+import './ItemList.scss'
 
 const ItemList = () => {
   const location = useLocation();
@@ -21,13 +22,13 @@ const ItemList = () => {
         id: item.id,
         title: item.title,
         price: { 
-          currency: item.sale_price?.currency_id || 'N/A', 
-          amount: item.sale_price?.amount || 'N/A',
-          // decimals: item.sale_price?.decimals // Uncomment if needed
+          currency: item.sale_price?.currency_id, 
+          amount: Math.floor(item.sale_price?.amount).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.'),
         },
         picture: item.thumbnail,
         condition: item.condition,
         free_shipping: item.shipping.free_shipping,
+        location: 'Buenos aires'
       }));
       
       setSearchedItems(items);
@@ -41,21 +42,32 @@ const ItemList = () => {
   }, [searchQuery]);
 
   return (
-    <div>
+    <main className='container'>
       {!loaded ? "Cargando resultados..." : (
-        <ul>
+        <>
+          {/* Breadcrum component */}
           {searchedItems.map(item => (
-            <li key={item.id}>
-              <img src={item.picture} alt={item.title} />
-              <h2>{item.title}</h2>
-              <p>{item.price.currency} {item.price.amount}</p>
-              <p>Condition: {item.condition}</p>
-              {item.free_shipping && <p>Free Shipping</p>}
-            </li>
+            <div className="item">
+            <div className="item-data">
+              <div className="item-image">
+                <img src={item.picture} alt="" />
+              </div>
+              <div className="item-details">
+                <h2 className="item-price">
+                  $ {item.price.amount}
+                  {item.free_shipping && (
+                    <img className="item-freeshiping-icon" src={null} alt="free shipping" />
+                  )}
+                </h2>
+                <h1 className="item-name">{item.title}</h1>
+              </div>
+            </div>
+            <h6 className="item-location">{item.location}</h6>
+          </div>
           ))}
-        </ul>
+        </>
       )}
-    </div>
+    </main>
   );
 };
 
