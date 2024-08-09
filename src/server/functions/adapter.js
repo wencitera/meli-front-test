@@ -14,7 +14,8 @@ const adaptItems = (items, categories) => {
             },
             picture: item.thumbnail,
             condition: item.condition,
-            free_shipping: item.shipping.free_shipping
+            free_shipping: item.shipping.free_shipping,
+            location: item.location !== undefined ? item.location.city.name : ''
         }))
     };
 
