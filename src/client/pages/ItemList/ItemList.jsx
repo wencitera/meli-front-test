@@ -1,11 +1,10 @@
-import React, { useState, useCallback, Fragment } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import { useLocation } from 'react-router-dom';
 import './ItemList.scss';
+import Item from '../../components/Item/Item'
 import useFetchAndLoad from '../../hooks/useFetchAndLoad';
-import { createItemListAdapter } from '../../adapters/item.adapter';
+import {useAsync} from '../../hooks/useAsync'
 import { getItemsBySearch } from '../../services/public.services';
-import { useAsync } from '../../hooks/useAsync';
-import Item from '../../components/Item/Item';
 
 const ItemList = () => {
   const { loading, callEndpoint } = useFetchAndLoad();
@@ -14,27 +13,36 @@ const ItemList = () => {
   const searchParams = new URLSearchParams(location.search);
   const searchQuery = searchParams.get('search');
 
-  const getItems = async () => { return await callEndpoint(getItemsBySearch(searchQuery)); };
+  const getItems = async () => { return await callEndpoint(getItemsBySearch(searchQuery))};
+  const setItems = (data) => setSearchedItems(data);
+  
+  useAsync(getItems, setItems, () => {}, [searchQuery])
 
-  const adaptItems = (data) => { setSearchedItems(createItemListAdapter(data)) };
-
-  useAsync(getItems, adaptItems, () => {}, []);
-
+  
   return (
-    <main className='container'>
-      {loading ? (
-        "Cargando resultados..."
-      ) : (
-        <>
-          {/* Breadcrum component */}
-          {searchedItems.map(item => (
-            <Fragment key={item.id}>
-              <Item id={item.id}  picture={item.picture} title={item.title} amount={item.price.amount} free_shipping={item.free_shipping} location={item.location} />
-            </Fragment>
-          ))}
-        </>
-      )}
-    </main>
+    <Fragment>
+      {/* Aquí es donde debes asegurarte de que la estructura de los datos es la correcta */}
+      <main className='container'>
+        {searchedItems.length === 0 ? (
+          "Cargando resultados..."
+        ) : (
+          <>
+            {searchedItems.items.map(item => (
+              <Fragment key={item.id}>
+                <Item
+                  id={item.id}
+                  picture={item.picture} 
+                  title={item.title} 
+                  amount={item.price.amount} 
+                  free_shipping={item.free_shipping} 
+                  location={item.location} 
+                />
+              </Fragment>
+            ))}
+          </>
+        )}
+      </main>
+    </Fragment>
   );
 };
 

@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './Item.scss'
 import { useNavigate } from 'react-router-dom';
+import FreeShipIcon from '../../assets/ic_shipping.png'
 
 const Item = ({ id, picture, title, amount, free_shipping, location }) => {
 
@@ -21,7 +22,7 @@ const Item = ({ id, picture, title, amount, free_shipping, location }) => {
             <h2 className="item-price">
             $ {amount}
             {free_shipping && (
-                <img className="item-freeshiping-icon" src={null} alt="free shipping" />
+                <img className="item-freeshiping-icon" src={FreeShipIcon} alt="free shipping" />
             )}
             </h2>
             <h1 className="item-name">{title}</h1>
@@ -32,12 +33,11 @@ const Item = ({ id, picture, title, amount, free_shipping, location }) => {
   )
 }
 
-// Define el tipo de las propiedades utilizando PropTypes
 Item.propTypes = {
     id: PropTypes.string.isRequired,
     picture: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    amount: PropTypes.string.isRequired,
+    amount: PropTypes.number.isRequired,
     free_shipping: PropTypes.bool.isRequired,
     location: PropTypes.string.isRequired,
   };

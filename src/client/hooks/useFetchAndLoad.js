@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 
 const useFetchAndLoad = () => {
   const [loading, setLoading] = useState(false);
@@ -12,7 +11,7 @@ const useFetchAndLoad = () => {
     setLoading(true);
     let result = {};
     try {
-      result = await axiosCall.call;
+      result = axiosCall.call;
     } catch (err) {
       console.error('Error fetching data:', err);
       throw err;
