@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './SearchNav.scss';  
+import MeliLogo from '../../assets/Logo_ML.png'
+import SearchLogo from '../../assets/ic_Search.png'
 
 const SearchNav = () => {
   const [value, setValue] = useState("");
-  const [error, setError] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -14,28 +15,26 @@ const SearchNav = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (value.trim() === "") {
-      setError(true);
-    } else {
+    if (value.trim() !== "") 
       navigate(`/items?search=${value}`);
-    }
   };
 
   return (
-    <div className="search-container">
+    <header className="search-container">
       <form className="search-form" onSubmit={handleSubmit}>
-        <img src={null} alt="Logo" className="logo" />
+        <img src={MeliLogo} alt="Logo de MercadoLibre" className="logo" />
         <input
           type="text"
           placeholder="Nunca dejes de buscar"
           className="search-input"
+          aria-label="Cuadro de busqueda"
           onChange={handleChange}
           />
-            <button className="search-button">
-                  <img src={null} alt="SearchIcon"/>
+            <button aria-label="Botón Buscar" className="search-button">
+                  <img src={SearchLogo} alt="SearchIcon"/>
             </button>
       </form>
-    </div>
+    </header>
   );
 };
 

@@ -21,7 +21,7 @@
  }
 
  .logo {
-    margin-right: 10px;
+    margin: 10px;
   }
   
   .search-input {
@@ -39,10 +39,11 @@
   
   .search-button {
     background-color: $light-color;
-    padding: 10px 5px 10px 12px;
+    padding: 10px;
     border: 1px solid $light-color;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
   }
   
   .search-icon {
