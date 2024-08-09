@@ -1,1 +1,1 @@
-export const HOSTNAME = 'https://api.mercadolibre.com/sites/MLA/';
+export const HOSTNAME = 'http://localhost:3000/api/';

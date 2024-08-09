@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 
 hydrateRoot(document.getElementById('root'), 
-<BrowserRouter>
-    <App/>
-</BrowserRouter>
+    <BrowserRouter>
+        <App/>
+    </BrowserRouter>
 );
