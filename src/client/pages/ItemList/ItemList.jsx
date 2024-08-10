@@ -14,8 +14,11 @@ const ItemList = () => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const searchQuery = searchParams.get('search');
+  const limitParams = new URLSearchParams(location.limit);
+  const limitQuery = limitParams.get('limit') ?? 4;
 
-  const getItems = async () => { return await callEndpoint(getItemsBySearch(searchQuery))};
+
+  const getItems = async () => { return await callEndpoint(getItemsBySearch(searchQuery, limitQuery))};
   const setItems = (data) => setSearchedItems(data);
   
   useAsync(getItems, setItems, () => {}, [searchQuery])

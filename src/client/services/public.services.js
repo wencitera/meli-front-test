@@ -2,11 +2,11 @@
 import { axiosClient } from '../models/api.url';
 import { loadAbort } from '../utils/load-abort-axios.utility';
 
-export const getItemsBySearch = (search) => {
+export const getItemsBySearch = (search, limit) => {
     const controller = loadAbort();
 
     return {
-        call: axiosClient.get(`items`, { signal: controller.signal, params : { q: search, limit: 4} }),
+        call: axiosClient.get(`items`, { signal: controller.signal, params : { q: search, limit: limit} }),
         controller
     }
 }
