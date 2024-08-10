@@ -19,10 +19,11 @@ const SearchNav = () => {
       navigate(`/items?search=${value}`);
   };
 
+
   return (
     <header className="search-container">
       <form className="search-form" onSubmit={handleSubmit}>
-        <img src={MeliLogo} alt="Logo de MercadoLibre" className="logo" />
+        <img src={MeliLogo} alt="Logo de MercadoLibre" className="logo" onClick={() => navigate('/')}/>
         <input
           type="text"
           placeholder="Nunca dejes de buscar"
