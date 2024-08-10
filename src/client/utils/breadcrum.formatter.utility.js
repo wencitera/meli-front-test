@@ -1,0 +1,1 @@
+export const formatBreadcrumContent = (content) =>  { return content.join(" > ") };

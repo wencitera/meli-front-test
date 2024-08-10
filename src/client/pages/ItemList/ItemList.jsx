@@ -5,6 +5,7 @@ import Item from '../../components/Item/Item'
 import useFetchAndLoad from '../../hooks/useFetchAndLoad';
 import {useAsync} from '../../hooks/useAsync'
 import { getItemsBySearch } from '../../services/public.services';
+import Breadcrum from '../../components/Breadcrum/Breadcrum';
 
 const ItemList = () => {
   const { loading, callEndpoint } = useFetchAndLoad();
@@ -20,13 +21,12 @@ const ItemList = () => {
 
   
   return (
-    <Fragment>
-      {/* Aquí es donde debes asegurarte de que la estructura de los datos es la correcta */}
       <main className='container'>
         {searchedItems.length === 0 ? (
           "Cargando resultados..."
         ) : (
           <>
+          <Breadcrum breadcrum={searchedItems.categories} />
             {searchedItems.items.map(item => (
               <Fragment key={item.id}>
                 <Item
@@ -42,7 +42,6 @@ const ItemList = () => {
           </>
         )}
       </main>
-    </Fragment>
   );
 };
 

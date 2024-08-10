@@ -5,6 +5,7 @@ import { getItemsById } from '../../services/public.services';
 import { useAsync } from '../../hooks/useAsync';
 import './ProductDetail.scss'
 import { formatCurrency } from '../../utils/currency.formatter.utility';
+import Breadcrum from '../../components/Breadcrum/Breadcrum';
 
 const ProductDetail = () => {
     const {id} = useParams();
@@ -21,7 +22,9 @@ const ProductDetail = () => {
     { productDetail === undefined ? 
       <h1>Cargando resultados</h1> 
     :
+    <>
     <div className="product-detail">
+      <Breadcrum breadcrum={productDetail.category}/>
       <div className="product-section">
         <div className="product-image">
           <img src={productDetail.item.picture} alt="iPod Touch" />
@@ -35,9 +38,10 @@ const ProductDetail = () => {
       </div>
       <div className="product-description">
         <h2>Descripción del producto</h2>
-        <p>{productDetail.item.description}</p>
+        <p>{productDetail.item.description.replace('\\n\\n', '<br/>')}</p>
       </div>
     </div>
+    </>
     }</>
   )
 }

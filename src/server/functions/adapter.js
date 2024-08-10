@@ -9,8 +9,8 @@ const adaptItems = (items, categories) => {
             title: item.title,
             price: {
                 currency: item.currency_id,
-                amount: item.price,
-                decimals: 0
+                amount: item.price.toString().split('.')[0],
+                decimals: item.price.toString().split('.')[1] ?? '00'
             },
             picture: item.thumbnail,
             condition: item.condition,
@@ -26,15 +26,15 @@ const adaptItems = (items, categories) => {
 const adaptItemDetail = (itemData, description, categoryName) => {
     return {
         author: AUTHOR,
-        category: categoryName,
+        category: [categoryName],
         item: {
             id: itemData.id,
             category_id: itemData.category_id,
             title: itemData.title,
             price: {
                 currency: itemData.currency_id,
-                amount: itemData.price,
-                decimals: 0
+                amount: itemData.price.toString().split('.')[0],
+                decimals:  itemData.price.toString().split('.')[1]
             },
             picture: itemData.thumbnail,
             condition: itemData.condition,

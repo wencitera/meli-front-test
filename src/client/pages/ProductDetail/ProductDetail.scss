@@ -1,16 +1,17 @@
 .product-detail {
-    background-color: #ffffff;
     justify-content: center;
     align-items: center;
     width: 80%;
     margin: auto;
-    padding: 32px;
     .product-section {
+      padding: 32px;
+      background-color: #ffffff;
       display: flex;
       .product-image {
 
         img {
           width: 680px;
+          margin-right: 32px
         }
       }
   
@@ -50,8 +51,9 @@
     }
   
     .product-description {
-      margin-top: 32px;
-  
+      padding: 32px;
+      background-color: #ffffff;
+      white-space: "pre-wrap";
       h2 {
         font-size: 28px;
         color: #333333;

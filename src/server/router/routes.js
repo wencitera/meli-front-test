@@ -10,13 +10,13 @@ router.get('/api/items', cors() ,async (req, res) => {
       const items = await services.getItemsSearch(req.query.q, req.query.limit);
 
       const uniqueCategories = [...new Set(items.map(item => item.category_id))];
+
       const categoryPromises = uniqueCategories.map(async (category) => {
         var categoryResponse = await services.getCategoryById(category);
-        return categoryResponse.name;
+        return categoryResponse;
       });
-
       const categoriesNames = await Promise.all(categoryPromises);
-
+      
       res.json(adapter.adaptItems(items, categoriesNames));
 
     } catch (error) {

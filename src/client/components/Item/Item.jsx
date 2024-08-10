@@ -10,7 +10,7 @@ const Item = ({ id, picture, title, amount, free_shipping, location }) => {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate(`/item/${id}`); // Redirige a la URL /item/:id
+        navigate(`/item/${id}`);
     };
     
   return (
@@ -38,7 +38,7 @@ Item.propTypes = {
     id: PropTypes.string.isRequired,
     picture: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    amount: PropTypes.number.isRequired,
+    amount: PropTypes.string.isRequired,
     free_shipping: PropTypes.bool.isRequired,
     location: PropTypes.string.isRequired,
   };
