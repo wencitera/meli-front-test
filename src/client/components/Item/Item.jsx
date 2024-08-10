@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import './Item.scss'
 import { useNavigate } from 'react-router-dom';
 import FreeShipIcon from '../../assets/ic_shipping.png'
+import { formatCurrency } from '../../utils/currency.formatter.utility';
 
 const Item = ({ id, picture, title, amount, free_shipping, location }) => {
 
@@ -20,7 +21,7 @@ const Item = ({ id, picture, title, amount, free_shipping, location }) => {
         </div>
         <div className="item-details">
             <h2 className="item-price">
-            $ {amount}
+            {formatCurrency(amount)}
             {free_shipping && (
                 <img className="item-freeshiping-icon" src={FreeShipIcon} alt="free shipping" />
             )}
