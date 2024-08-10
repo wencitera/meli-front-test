@@ -1,9 +1,9 @@
 @import '../../styles/style.scss';
 
 .item {
-    background-color: white;
+    background-color: $white-color;
     display: flex;
-    padding: 16px;
+    padding: $small-spacing;
     position: relative;
     align-items: flex-start;
     color: $black-color;
@@ -17,7 +17,7 @@
   }
   
   .item-details {
-    margin-left: 16px;
+    margin-left: $small-spacing;
     margin-top: 10px;
     max-width: 80%;
   }
@@ -26,7 +26,7 @@
   }
   
   .item-price {
-    margin-bottom: 32px;
+    margin-bottom: $medium-spacing;
     font-size: 24px;
     font-weight: 400;
     
@@ -47,7 +47,7 @@
     width: 180px;
     height: 180px;
     border-radius: 4px;
-    margin-right: 16px;
+    margin-right: $small-spacing;
     img {
       width: 100%;
       height: 100%;
