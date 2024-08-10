@@ -10,3 +10,12 @@ export const getItemsBySearch = (search) => {
         controller
     }
 }
+
+export const getItemsById = (id) => {
+    const controller = loadAbort();
+
+    return {
+        call: axiosClient.get(`items/${id}`, { signal: controller.signal }),
+        controller
+    }
+}
