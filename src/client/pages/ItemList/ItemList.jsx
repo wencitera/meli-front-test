@@ -6,6 +6,7 @@ import useFetchAndLoad from '../../hooks/useFetchAndLoad';
 import {useAsync} from '../../hooks/useAsync'
 import { getItemsBySearch } from '../../services/public.services';
 import Breadcrum from '../../components/Breadcrum/Breadcrum';
+import Loader from '../../components/Loader/Loader';
 
 const ItemList = () => {
   const { loading, callEndpoint } = useFetchAndLoad();
@@ -23,7 +24,7 @@ const ItemList = () => {
   return (
       <main className='container'>
         {searchedItems.length === 0 ? (
-          "Cargando resultados..."
+          <Loader />
         ) : (
           <>
           <Breadcrum breadcrum={searchedItems.categories} />

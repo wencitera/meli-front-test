@@ -6,6 +6,7 @@ import { useAsync } from '../../hooks/useAsync';
 import './ProductDetail.scss'
 import { formatCurrency } from '../../utils/currency.formatter.utility';
 import Breadcrum from '../../components/Breadcrum/Breadcrum';
+import Loader from '../../components/Loader/Loader';
 
 const ProductDetail = () => {
     const {id} = useParams();
@@ -20,7 +21,7 @@ const ProductDetail = () => {
     return (
     <>
     { productDetail === undefined ? 
-      <h1>Cargando resultados</h1> 
+      <Loader />
     :
         <article className="product-detail">
           <Breadcrum breadcrum={productDetail.category}/>
