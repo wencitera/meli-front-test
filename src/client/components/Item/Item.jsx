@@ -16,20 +16,20 @@ const Item = ({ id, picture, title, amount, free_shipping, location }) => {
   return (
     <div className="item" onClick={handleClick}>
         <div className="item-data">
-        <div className="item-image">
-            <img src={picture} alt={title} />
+          <div className="item-image">
+              <img src={picture} alt={title} />
+          </div>
+          <div className="item-details">
+              <h2 className="item-price">
+                {formatCurrency(amount)}
+                {free_shipping && (
+                    <img className="item-freeshiping-icon" src={FreeShipIcon} alt="Envío Gratis" />
+                )}
+              </h2>
+              <h1 className="item-name">{title}</h1>
+          </div>
         </div>
-        <div className="item-details">
-            <h2 className="item-price">
-            {formatCurrency(amount)}
-            {free_shipping && (
-                <img className="item-freeshiping-icon" src={FreeShipIcon} alt="free shipping" />
-            )}
-            </h2>
-            <h1 className="item-name">{title}</h1>
-        </div>
-        </div>
-        <h6 className="item-location">{location}</h6>
+        <span className="item-location">{location}</span>
     </div>
   )
 }
