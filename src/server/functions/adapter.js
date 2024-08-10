@@ -23,9 +23,10 @@ const adaptItems = (items, categories) => {
 }
 
 
-const adaptItemDetail = (itemData, description) => {
+const adaptItemDetail = (itemData, description, categoryName) => {
     return {
         author: AUTHOR,
+        category: categoryName,
         item: {
             id: itemData.id,
             category_id: itemData.category_id,

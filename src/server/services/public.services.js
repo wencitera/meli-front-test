@@ -16,15 +16,9 @@ const getItemDescription = async (id) => {
     return response.data.plain_text;
 }
 
-const getCategories = async (categoriesArray) => {
-    const categoryPromises = categoriesArray.map(async (category) => {
-        const categoryResponse = await axiosClient.get(ROUTES.CATEGORIES.replace("{0}", category));
-        return categoryResponse.data.name;
-    });
-
-    const categoryNames = await Promise.all(categoryPromises);
-    return categoryNames;
+const getCategoryById = async (category) => {
+    const response = await axiosClient.get(ROUTES.CATEGORIES.replace("{0}", category));
+    return response.data.name;
 }
 
-
-module.exports = { getItemData, getItemDescription, getCategories, getItemsSearch}
+module.exports = { getItemData, getItemDescription, getItemsSearch, getCategoryById }

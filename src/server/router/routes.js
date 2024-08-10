@@ -10,9 +10,14 @@ router.get('/api/items', cors() ,async (req, res) => {
       const items = await services.getItemsSearch(req.query.q, req.query.limit);
 
       const uniqueCategories = [...new Set(items.map(item => item.category_id))];
-      const categorieNamesArray = await services.getCategories(uniqueCategories)
+      const categoryPromises = uniqueCategories.map(async (category) => {
+        var categoryResponse = await services.getCategoryById(category);
+        return categoryResponse.name;
+      });
 
-      res.json(adapter.adaptItems(items, categorieNamesArray));
+      const categoriesNames = await Promise.all(categoryPromises);
+
+      res.json(adapter.adaptItems(items, categoriesNames));
 
     } catch (error) {
       res.status(500).json({ error: error });
@@ -25,10 +30,10 @@ router.get('/api/items/:id', cors(), async (req, res) => {
         const itemId = req.params.id;
 
         const itemData = await services.getItemData(itemId);
-
         const description = await services.getItemDescription(itemId);
+        const category = await services.getCategoryById(itemData.category_id);
 
-        const formattedItem = adapter.adaptItemDetail(itemData, description);
+        const formattedItem = adapter.adaptItemDetail(itemData, description, category);
 
         res.json(formattedItem);
     } catch (error) {
