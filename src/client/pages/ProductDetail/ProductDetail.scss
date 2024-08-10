@@ -1,17 +1,19 @@
+@import '../../styles/style.scss';
+
 .product-detail {
     justify-content: center;
     align-items: center;
     width: 80%;
     margin: auto;
     .product-section {
-      padding: 32px;
-      background-color: #ffffff;
+      padding: $medium-spacing;
+      background-color: $white-color;
       display: flex;
       .product-image {
 
         img {
           width: 680px;
-          margin-right: 32px
+          margin-right: $medium-spacing
         }
       }
   
@@ -20,25 +22,25 @@
 
         .product-status {
           font-size: 14px;
-          color: #999999;
-          margin-bottom: 16px;
+          color: $medium-gray-color;
+          margin-bottom: $small-spacing;
         }
   
         .product-title {
           font-size: 24px;
-          color: #333333;
-          margin-bottom: 16px;
+          color: $black-color;
+          margin-bottom: $small-spacing;
         }
   
         .product-price {
           font-size: 46px;
-          color: #333333;
+          color: $black-color;
           font-weight: 400;
         }
   
         .buy-button {
-            background-color: #3483FA;
-            color: white;
+            background-color: $blue-color;
+            color: $white-color;
             font-size: 16px;
             padding: 12px 24px;
             border: none;
@@ -51,17 +53,17 @@
     }
   
     .product-description {
-      padding: 32px;
-      background-color: #ffffff;
-      white-space: "pre-wrap";
+      padding: $medium-spacing;
+      background-color: $white-color;
+      
       h2 {
         font-size: 28px;
-        color: #333333;
+        color: $black-color;
       }
   
       p {
         font-size: 16px;
-        color: #666666;
+        color: $medium-gray-color;
         margin-top: 16px;
       }
     }
