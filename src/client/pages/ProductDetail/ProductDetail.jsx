@@ -22,26 +22,35 @@ const ProductDetail = () => {
     { productDetail === undefined ? 
       <h1>Cargando resultados</h1> 
     :
-    <>
-    <div className="product-detail">
-      <Breadcrum breadcrum={productDetail.category}/>
-      <div className="product-section">
-        <div className="product-image">
-          <img src={productDetail.item.picture} alt="iPod Touch" />
-        </div>
-        <div className="product-info">
-          <span className="product-status">{productDetail.item.condition === 'new' ? 'Nuevo' : 'Usado'}</span> • <span>234 vendidos</span>
-          <h1 className="product-title">{productDetail.item.title}</h1>
-          <h2 className="product-price">{formatCurrency(productDetail.item.price.amount)}</h2>
-          <button className="buy-button">Comprar</button>
-        </div>
-      </div>
-      <div className="product-description">
-        <h2>Descripción del producto</h2>
-        <p>{productDetail.item.description.replace('\\n\\n', '<br/>')}</p>
-      </div>
-    </div>
-    </>
+        <article className="product-detail">
+          <Breadcrum breadcrum={productDetail.category}/>
+          <section className="product-section">
+            <div className="product-image">
+              <img src={productDetail.item.picture} alt={`Imagen de ${productDetail.item.title}`} />
+            </div>
+            <aside className="product-info">
+              <span className="product-status"
+                aria-label={`Estado del producto: ${productDetail.item.condition === 'new' ? 'Nuevo' : 'Usado'}`}>
+                {productDetail.item.condition === 'new' ? 'Nuevo' : 'Usado'} - {productDetail.item.sold_quantity} vendidos
+              </span>
+              <h1 className="product-title">
+                {productDetail.item.title}
+              </h1>
+              <p className="product-price">
+                {formatCurrency(productDetail.item.price.amount)}
+              </p>
+              <button 
+                aria-label={`Comprar ${productDetail.item.title}`}
+                className="buy-button">
+                  Comprar
+              </button>
+            </aside>
+          </section>
+          <section className="product-description" aria-labelledby="product-description-heading">
+            <h2 id="product-description-heading">Descripción del producto</h2>
+            <p>{productDetail.item.description}</p>
+          </section>
+        </article>
     }</>
   )
 }
