@@ -4,7 +4,7 @@ import './Breadcrum.scss'
 
 const Breadcrum = ({breadcrum}) => {
   return (
-    <nav className="breadcrumb">
+    <nav aria-label="Ruta de navegación" className="breadcrumb">
         {formatBreadcrumContent(breadcrum)}
     </nav>
   )
