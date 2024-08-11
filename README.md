@@ -23,23 +23,23 @@ src
 ## Estructura del proyecto
 
 ───src
-    ├───client                  - Se encuentra la configuración e inicialización del cliente
-    │   ├───assets              - Archivos estáticos para consumir desde el cliente
-    │   ├───components          - Componentes a consumir desde las pages u otros componentes
-    │   ├───constants           - Variables que no se modifician y tienen uso común.
-    │   ├───hooks               - Hooks personalizados para reutilización
-    │   ├───models              - Entidades que se utilizan
-    │   ├───pages               - Componentes global que se consume desde la navegacion
-    │   ├───services            - Comunicación con el backend
-    │   ├───styles              - Definicion global de estilos
-    │   ├───utils               - Funciones para dar formato o ajustar información.
-    │   └───__mocks__           - Utilidad para desarrollo y testing unitario.
-    │
-    └───server                  - Se encuentra la configuracion e inicializacion del servidor
-        ├───constants           - Variables que no se modifician y tienen uso común.
-        ├───functions           - Funciones para dar formato o adaptar información.
-        ├───router              - Rutas posibles para comunicarse
-        └───services            - Comunicación con servicios externos
+├───client - Se encuentra la configuración e inicialización del cliente
+│ ├───assets - Archivos estáticos para consumir desde el cliente
+│ ├───components - Componentes a consumir desde las pages u otros componentes
+│ ├───constants - Variables que no se modifican y tienen uso común.
+│ ├───hooks - Hooks personalizados para reutilización
+│ ├───models - Entidades que se utilizan
+│ ├───pages - Componentes globales que se consumen desde la navegación
+│ ├───services - Comunicación con el backend
+│ ├───styles - Definición global de estilos
+│ ├───utils - Funciones para dar formato o ajustar información.
+│ └───mocks - Utilidades para desarrollo y testing unitario.
+│
+└───server - Se encuentra la configuración e inicialización del servidor
+├───constants - Variables que no se modifican y tienen uso común.
+├───functions - Funciones para dar formato o adaptar información.
+├───router - Rutas posibles para comunicarse
+└───services - Comunicación con servicios externos
 
 ## Próximas funcionalidades
 
