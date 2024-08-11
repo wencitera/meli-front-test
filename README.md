@@ -6,40 +6,40 @@ resultados, y la descripción del detalle del producto.
 
 ## Stack tecnológico
 
-src
-├───client - Frontend: React, Sass, Vite.js, Jest, Axios.
-└───server - Backend: Node.js, Express, Axios.
+src  
+├───client - Frontend: React, Sass, Vite.js, Jest, Axios.  
+└───server - Backend: Node.js, Express, Axios.  
 
 ## Puesta en funcionamiento
 
 1. Clona o descargar este repositorio.
 2. Ingresar a la carpeta raíz `cd meli-front-test`.
 3. Instalar las dependencias con los siguientes scripts:
-3.1. `npm install` - Instala la dependencia para centralizar el alta del server y cliente.
-3.2. `npm run install` - Instalar las dependencias para el server y cliente.
-3.3. `npm run start` - Iniciar los entornos de desarrollo para el server y cliente.
+  3.1. `npm install` - Instala la dependencia para centralizar el alta del server y cliente.
+  3.2. `npm run install` - Instalar las dependencias para el server y cliente.
+  3.3. `npm run start` - Iniciar los entornos de desarrollo para el server y cliente.
 4. Abrir el navegador y dirigirse a la siguiente url: `http://localhost:5173`.
 
 ## Estructura del proyecto
 
-───src
-├───client - Se encuentra la configuración e inicialización del cliente
-│ ├───assets - Archivos estáticos para consumir desde el cliente
-│ ├───components - Componentes a consumir desde las pages u otros componentes
-│ ├───constants - Variables que no se modifican y tienen uso común.
-│ ├───hooks - Hooks personalizados para reutilización
-│ ├───models - Entidades que se utilizan
-│ ├───pages - Componentes globales que se consumen desde la navegación
-│ ├───services - Comunicación con el backend
-│ ├───styles - Definición global de estilos
-│ ├───utils - Funciones para dar formato o ajustar información.
-│ └───mocks - Utilidades para desarrollo y testing unitario.
+───src  
+├───client - Se encuentra la configuración e inicialización del cliente  
+│ ├───assets - Archivos estáticos para consumir desde el cliente  
+│ ├───components - Componentes a consumir desde las pages u otros componentes  
+│ ├───constants - Variables que no se modifican y tienen uso común.  
+│ ├───hooks - Hooks personalizados para reutilización  
+│ ├───models - Entidades que se utilizan  
+│ ├───pages - Componentes globales que se consumen desde la navegación  
+│ ├───services - Comunicación con el backend  
+│ ├───styles - Definición global de estilos  
+│ ├───utils - Funciones para dar formato o ajustar información.  
+│ └───mocks - Utilidades para desarrollo y testing unitario.  
 │
-└───server - Se encuentra la configuración e inicialización del servidor
-├───constants - Variables que no se modifican y tienen uso común.
-├───functions - Funciones para dar formato o adaptar información.
-├───router - Rutas posibles para comunicarse
-└───services - Comunicación con servicios externos
+└───server - Se encuentra la configuración e inicialización del servidor  
+├───constants - Variables que no se modifican y tienen uso común.  
+├───functions - Funciones para dar formato o adaptar información.  
+├───router - Rutas posibles para comunicarse  
+└───services - Comunicación con servicios externos  
 
 ## Próximas funcionalidades
 
@@ -51,4 +51,4 @@ src
 
 ## Otras funcionalidades
 
-1. Probar unit test, desde la carpeta raiz, ejecutar el comando `npm run test` (Actualmente solo corre tests del cliente)
+1. Probar unit test, desde la carpeta raiz, ejecutar el comando `npm run test` (Actualmente solo corre tests del cliente)  
