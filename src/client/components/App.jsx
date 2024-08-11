@@ -5,7 +5,7 @@ import Loader from './Loader/Loader';
 
 const SearchNav = lazy(() => import('./SearchNav/SearchNav'));
 const Home = lazy(() =>  import('../pages/Home'));
-const ItemList = lazy(() => import('../pages/ItemList/ItemList'));
+const ProductList = lazy(() => import('../pages/ProductList/ProuctList'));
 const ProductDetail = lazy(() => import('../pages/ProductDetail/ProductDetail'));
 
 const App = () => {
@@ -15,7 +15,7 @@ const App = () => {
             <SearchNav />
             <Routes>
                 <Route path="/" element={<Home />}/>
-                <Route path='/items' element={<ItemList/>} />
+                <Route path='/items' element={<ProductList/>} />
                 <Route path='/item/:id' element={<ProductDetail />} />
             </Routes>
         </Suspense>
