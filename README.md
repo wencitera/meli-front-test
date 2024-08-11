@@ -14,10 +14,10 @@ src
 
 1. Clona o descargar este repositorio.
 2. Ingresar a la carpeta raíz `cd meli-front-test`.
-3. Instalar las dependencias con los siguientes scripts:
-3.1. `npm install` - Instala la dependencia para centralizar el alta del server y cliente.
-3.2. `npm run install` - Instalar las dependencias para el server y cliente.
-3.3. `npm run start` - Iniciar los entornos de desarrollo para el server y cliente.
+3. Instalar las dependencias con los siguientes scripts:  
+3.1. `npm install` - Instala la dependencia para centralizar el alta del server y cliente.  
+3.2. `npm run install` - Instalar las dependencias para el server y cliente.  
+3.3. `npm run start` - Iniciar los entornos de desarrollo para el server y cliente.  
 4. Abrir el navegador y dirigirse a la siguiente url: `http://localhost:5173`.
 
 ## Estructura del proyecto
